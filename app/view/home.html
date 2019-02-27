@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <h3>Request</h3>
+    <ul>
+        <li>{{ method }} {{ protocol }}</li>
+        {% for key, value in reqData %}
+        <li>
+            <b>{{ key }}</b>
+            <span>{{ value }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    <p>
+        使用的浏览器是: {{ ua.browser }}
+    </p>
+    <p>
+        浏览器引擎: {{ ua.engine }}
+	</p>
+	<h3>当前可访问路由</h3>
+    {% for router in routers %}
+    <p>
+        <a href="{{ router }}">{{ router }}</a>
+    </p>
+    {% endfor %} 
+</body>
+
+</html>
